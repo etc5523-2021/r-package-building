@@ -36,3 +36,25 @@ This is a basic example which shows you how to solve a common problem:
 library(packageName)
 ## basic example code
 ```
+
+```{r}
+library(sunset)
+library(tidyverse)
+library(ggplot2)
+
+mtcars$vs   <- paste(mtcars$vs)
+mtcars$gear <- paste(mtcars$gear)
+
+g <- ggplot(mtcars) +
+  aes(mpg, wt, color = vs) +
+  geom_point(size = 4) +
+  theme_bw()
+
+g
+```
+
+
+```{r}
+g + scale_colour_mountain_d()
+```
+
