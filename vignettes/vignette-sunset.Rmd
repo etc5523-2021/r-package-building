@@ -1,0 +1,60 @@
+---
+title: "vignette-sunset"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{vignette-sunset}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+```{r setup}
+library(sunset)
+library(tidyverse)
+library(ggplot2)
+library(palmerpenguins)
+library(unikn)
+library(colorspace)
+```
+
+# The vignette gives an overview of your palette, and the colours that are in it
+
+```{r}
+
+seecol("mountain_colours")
+```
+
+# The vignette shows how the palette can be used with ggplot2 by making a bar chart and a scatter plot on the palmerpenguins data.
+
+```{r}
+view(penguins)
+```
+
+```{r}
+
+ggplot(penguins, aes(body_mass_g, flipper_length_mm, color = species)) +
+  geom_bar(stat = "identity") +
+  scale_color_mountain_d()
+
+```
+
+```{r}
+# view(penguins)
+ggplot(penguins, aes(body_mass_g, flipper_length_mm, color = body_mass_g)) +
+  geom_point() +
+  scale_colour_mountain_seq_c ()
+
+
+```
+
+```{r}
+ggplot(penguins, aes(body_mass_g, flipper_length_mm, fill = species)) +
+  geom_bar(stat = "identity") +
+  scale_fill_mountain_d()
+```

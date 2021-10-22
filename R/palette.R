@@ -1,5 +1,8 @@
-# Define colour palette variables and functions here
-
+#' Mountain Colours
+#' @examples
+#' mountain_colours
+#' @rdname mountain_colours
+#' @export mountain_colours
 mountain_colours <- list(
   # add your colours as a named list here, i.e.
   "navajowhite" = "#f9ca9a",
@@ -10,6 +13,18 @@ mountain_colours <- list(
   "darkkhaki" = "#b5bb7c"
 )
 
+#' Mountain Palette
+#'
+#' @param primary The primary colour in the palette which is navajowhite
+#' @param other In case there are only 2 colours to be chosen then, this colour will be used. It is darkkhaki
+#' @param direction If value of direction is 0 or greater than 0, then the colours will be in the order: navajowhite, lightsteelblue, silver, lightpink, sandybrown, darkkhaki. If it is less than 1 then the direction will be reversed.
+#'
+#' @return The color list with n number of colours where n is the parameter passed
+#' @examples
+#' mountain_palette()(3)
+#' mountain_palette("lightsteelblue", "lightpink", -1)(2)
+#' @rdname mountain_palette
+#' @export mountain_palette
 mountain_palette <- function(
   primary = "navajowhite",
   other = "darkkhaki",
