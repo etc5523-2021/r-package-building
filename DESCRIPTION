@@ -1,6 +1,6 @@
 Package: sunset
 Title: Colours from the sunset palette
-Version: 0.0.0.9000
+Version: 0.1.0
 Authors@R: 
     person(given = "Sahinya",
            family = "Akila",
