@@ -23,38 +23,42 @@ library(unikn)
 library(colorspace)
 ```
 
-# The vignette gives an overview of your palette, and the colours that are in it
+### The vignette gives an overview of your palette, and the colours that are in it
 
-```{r}
-
+```{r, fig.width = 8, fig.height=6,fig.cap="Colours in the sunset palette", fig.align='center', message=FALSE, warning=FALSE}
 seecol("mountain_colours")
 ```
 
-# The vignette shows how the palette can be used with ggplot2 by making a bar chart and a scatter plot on the palmerpenguins data.
+### The vignette shows how the palette can be used with ggplot2 by making a bar chart and a scatter plot on the palmerpenguins data.
 
-```{r}
-view(penguins)
-```
+```{r, fig.width = 8, fig.height=6,fig.cap="Penguin Size and Body mass", fig.align='center', message=FALSE, warning=FALSE}
 
-```{r}
-
-ggplot(penguins, aes(body_mass_g, flipper_length_mm, color = species)) +
-  geom_bar(stat = "identity") +
-  scale_color_mountain_d()
-
-```
-
-```{r}
-# view(penguins)
-ggplot(penguins, aes(body_mass_g, flipper_length_mm, color = body_mass_g)) +
+penguins %>%
+  group_by(species) %>% 
+  ggplot(aes(x = flipper_length_mm, y = body_mass_g, color = species, shape = species)) +
   geom_point() +
-  scale_colour_mountain_seq_c ()
-
+  scale_color_mountain_d() +
+  theme_light()
 
 ```
 
-```{r}
-ggplot(penguins, aes(body_mass_g, flipper_length_mm, fill = species)) +
-  geom_bar(stat = "identity") +
-  scale_fill_mountain_d()
+```{r, fig.width = 10, fig.height=6,fig.cap="Island and Flipper Length", fig.align='center', message=FALSE, warning=FALSE}
+
+penguins %>%
+  ggplot(aes(x = island, y = flipper_length_mm, fill = island)) +
+  geom_col() +
+  scale_fill_mountain_d() +
+  theme_light()
+
+```
+
+```{r, fig.width = 10, fig.height=6,fig.cap="Body Mass wrt bill length and depth", fig.align='center', message=FALSE, warning=FALSE}
+
+penguins %>%
+  ggplot(aes(x = bill_length_mm, y = bill_depth_mm, color = body_mass_g)) +
+  geom_point() +
+  scale_colour_mountain_seq_c(name = "lightpink", amount = 0.8) +
+  theme_light()
+  
+
 ```

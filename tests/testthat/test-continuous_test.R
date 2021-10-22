@@ -1,3 +1,3 @@
-test_that("multiplication works", {
-  expect_equal(2 * 2, 4)
+test_that("continuous", {
+  expect_error(scale_colour_mountain_seq_c("red"), "red does not exist in this palette")
 })

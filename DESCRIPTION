@@ -1,5 +1,5 @@
 Package: sunset
-Title: What the Package Does (One Line, Title Case)
+Title: Colours from the sunset palette
 Version: 0.0.0.9000
 Authors@R: 
     person(given = "Sahinya",
@@ -7,7 +7,7 @@ Authors@R:
            role = c("aut", "cre"),
            email = "saki0001@student.monash.edu",
            comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
+Description: This package contains 6 colours that can be used for making ggplot graphs. The palette contains discrete aesthetic colours. This is a qualitative palette that does not imply magnitude difference between classes but shows visual differences. It is best suited for categorical data between variable values. 
 License: GPL (>= 3)
 Encoding: UTF-8
 LazyData: true

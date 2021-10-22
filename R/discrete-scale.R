@@ -17,6 +17,9 @@ scale_colour_mountain_d <- function(
   direction = 1,
   ...
 ) {
+  stopifnot(primary %in% names(mountain_colours))
+  stopifnot(other %in% names(mountain_colours))
+
   ggplot2::discrete_scale(
     "colour", "mountain",
     mountain_palette(primary, other, direction),
@@ -56,9 +59,11 @@ scale_fill_mountain_d <- function(
   direction = 1,
   ...
 ) {
+  stopifnot(primary %in% names(mountain_colours))
+  stopifnot(other %in% names(mountain_colours))
   ggplot2::discrete_scale(
     "fill", "mountain",
-    mountain_palette("navajowhite", "darkkhaki", direction),
+    mountain_palette(primary, other, direction),
     ...
   )
 }

@@ -4,7 +4,6 @@
 #' @rdname mountain_colours
 #' @export mountain_colours
 mountain_colours <- list(
-  # add your colours as a named list here, i.e.
   "navajowhite" = "#f9ca9a",
   "lightsteelblue" = "#9ecfc4",
   "silver" = "#c4d7bf",
