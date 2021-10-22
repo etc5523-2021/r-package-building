@@ -13,7 +13,6 @@
 #' @rdname scale_colour_mountain_seq_c
 #' @export scale_colour_mountain_seq_c
 scale_colour_mountain_seq_c <- function(name = "darkkhaki", direction = 1, amount = 0.5, ...) {
-  library(colorspace)
   if (!name %in% names(mountain_colours)){
     stop(paste(name, "does not exist in this palette"))
   }
